@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
+<html lang="en" dir="ltr" ng-app="myFirstApp">
+  <head >
     <meta charset="utf-8">
-    <title></title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>First Page</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <h1>Hi</h1>
+    <div ng-controller="myFirstController">
+      {{name}}
+      {{sayHello()}}
+      <input type="text" ng-model="name">
+      <!--ng-model checks for something called name in scope
+      and we are binding $scope.name to the name here .-->
+      Inside the input is: {{name}}
+      <!--As we change the value in input it changes the name simulataneously as name att is bound to scope var-->
+    </div>
   </body>
 </html>
