@@ -4,9 +4,21 @@
   angular.module("myFirstApp", [])
 
   .controller("myFirstController",function($scope){//any var with $ says its reserved for angularJs
-    $scope.name="Kiran"; //Now name is available in the scope variable inside the myFirstController in index.html
-    $scope.sayHello=function(){
-      return "Hello World";
+    $scope.list="";
+    $scope.result="";
+    $scope.check=function(){
+      var a=$scope.list;
+      var b=a.split(",");
+      if (a==""||a==" " ) {
+        $scope.result="Please enter data first";
+        
+      }
+      else if (b.length<=3) {
+        $scope.result="Enjoy!";
+      }
+      else {
+        $scope.result="Too much!";
+      }
     };
   })
 })();
